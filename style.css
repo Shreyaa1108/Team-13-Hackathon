@@ -267,7 +267,7 @@ section h2 {
 
 /* Styling for Access on Mobile Title */
 .qr-title {
-    color: #e4042c;
+    color: #2E2E2E;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -276,7 +276,7 @@ section h2 {
 /* QR Code Image Styling */
 .qr-code-img {
     width: 150px;
-    border: 3px solid #e4042c;
+    border: 3px solid #2E2E2E;
     padding: 5px;
     border-radius: 10px;
     display: block;
