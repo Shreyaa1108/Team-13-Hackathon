@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Campus Essentials Locator</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Essentials Locator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (!isLoggedIn) {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
 
-
-
-    <!-- Minimalistic Header with Logo, Title, and Login Button -->
     <header class="header-minimal">
         <div class="header-container">
             <div class="logo-title-container">
@@ -22,27 +27,16 @@
                     <p class="header-subtitle mb-0">Discover campus amenities and resources</p>
                 </div>
             </div>
-            <a href="#login" class="btn login-button">Log In</a>
+            <button id="logout-button" class="btn login-button" onclick="logout()">Log Out</button>
         </div>
     </header>
-    
 
-
-    
-
-    <!-- Hero Section with Background Image -->
-    <section class="hero-section">
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1 class="hero-title">WELCOME TO CAMPUS ESSENTIALS!</h1>
-                <p class="hero-description">
-                    Discover all the essential amenities on campus. Whether you’re looking for quiet study spots, bike parking, or water refill stations, we've got you covered.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#filter-buttons" class="btn hero-button">Explore Amenities</a>
-                    <a href="#poi-list" class="btn hero-button">View Map</a>
-                </div>
-            </div>
+        <!-- Introduction Section -->
+    <section class="intro-section text-center py-3">
+        <div class="container">
+            <p class="intro-text mb-0">
+                Welcome to the Campus Essentials Locator – your ultimate guide to discovering essential amenities on campus. Easily find the resources you need to make the most of your campus experience!
+            </p>
         </div>
     </section>
 
@@ -50,7 +44,7 @@
 
     <!-- Quick Access Filters -->
     <section class="container my-5">
-        <h2 class="text-center mb-4 section-title">Quick Access Filters</h2>
+        <h2 class="text-center mb-4">Quick Access Filters</h2>
         <div id="filter-buttons" class="d-flex justify-content-center gap-3 flex-wrap">
             <button class="btn" onclick="filterPOI('all')">Show All</button>
             <button class="btn" onclick="filterPOI('Bike Parking')">Bike Parking</button>
@@ -64,13 +58,13 @@
     <section class="container my-5">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="poi-title text-center mb-4">Points of Interest</h2>
+                <h2 class="text-center mb-4" style="color: #8B0000;">Points of Interest</h2>
                 <div id="poi-list" class="list-group">
                     <!-- POIs dynamically added here -->
                 </div>
             </div>
             <div class="col-md-6">
-                <h2 class="map-title text-center mb-4">Campus Map</h2>
+                <h2 class="text-center mb-4" style="color: #8B0000;">Campus Map</h2>
                 <div id="map" style="height: 400px; width: 100%;"></div>
             </div>
         </div>
@@ -161,16 +155,14 @@
 
 
     <!-- QR Code Section -->
-    <section class="qr-code-wrapper text-center my-5">
-        <h2 class="qr-title">Access on Mobile</h2>
+    <section class="container text-center my-5">
+        <h2 style="color: #8B0000;">Access on Mobile</h2>
         <p>Scan the QR code to open the Campus Essentials Locator on your mobile device.</p>
-        <img src="qr.png" alt="QR Code" class="qr-code-img">
+        <img src="qr.png" alt="QR Code" style="width: 150px;">
     </section>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="app.js"></script>
-
 </body>
 </html>

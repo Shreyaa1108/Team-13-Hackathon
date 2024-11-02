@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Essentials Locator</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Additional CSS styles for layout */
+        .building-section {
+            margin-bottom: 20px;
+        }
+        .poi-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 20px; /* Space between items */
+        }
+        .poi-item {
+            flex: 1 1 calc(50% - 20px); /* 2 items per row with space */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
     <header class="header-minimal">
@@ -21,13 +39,61 @@
 
     <section id="poi-list">
         <h2>Available Spaces</h2>
-        
-        <div class="poi-item" id="group-study">
-            <h3>Group Study Space 1</h3>
-            <p>Location: Library Building</p>
-            <p>Quick Tip: Best for collaborative projects!</p>
+
+        <!-- Sir Bob Burgess -->
+        <div class="building-section">
+            <h3>Sir Bob Burgess</h3>
+            <div class="poi-list">
+                <div class="poi-item" id="group-study-space-1">
+                    <h4>Group Study Space 1</h4>
+                    <p>Location: 1st Floor, Next to the Stairs</p>
+                    <p>Quick Tip: Convenient spot for quick meetings!</p>
+                </div>
+                <div class="poi-item" id="group-study-space-2">
+                    <h4>Group Study Space 2</h4>
+                    <p>Location: 1st Floor, Outside the Lecture Theatre</p>
+                    <p>Quick Tip: Great for group discussions before classes!</p>
+                </div>
+            </div>
         </div>
 
+        <!-- Percy Gee -->
+        <div class="building-section">
+            <h3>Percy Gee</h3>
+            <div class="poi-list">
+                <div class="poi-item" id="group-study-space-3">
+                    <h4>Group Study Space 3</h4>
+                    <p>Location: Ground Floor, Near the Cafeteria</p>
+                    <p>Quick Tip: Good for a relaxed atmosphere!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- David Wilson -->
+        <div class="building-section">
+            <h3>David Wilson</h3>
+            <div class="poi-list">
+                <div class="poi-item" id="group-study-space-4">
+                    <h4>Group Study Space 4</h4>
+                    <p>Location: 2nd Floor, Room 205</p>
+                    <p>Quick Tip: Quiet area ideal for studying!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charles Wilson -->
+        <div class="building-section">
+            <h3>Charles Wilson</h3>
+            <div class="poi-list">
+                <div class="poi-item" id="group-study-space-5">
+                    <h4>Group Study Space 5</h4>
+                    <p>Location: 1st Floor, Next to the Computer Lab</p>
+                    <p>Quick Tip: Great for tech-based group projects!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other POIs -->
         <div class="poi-item" id="quiet-study">
             <h3>Quiet Study Area 1</h3>
             <p>Location: East Campus</p>
@@ -46,28 +112,6 @@
             <p>Quick Tip: Stay hydrated!</p>
         </div>
 
-        <!-- New Group Study Spaces -->
-        <div class="poi-item" id="library-study-space">
-            <h3>Group Study Space 2</h3>
-            <p>Location: Library Building, Room 101</p>
-            <p>Capacity: 8 students</p>
-            <p>Quick Tip: Ideal for team discussions!</p>
-        </div>
-
-        <div class="poi-item" id="east-campus-study-space">
-            <h3>Group Study Space 3</h3>
-            <p>Location: East Campus, Room 201</p>
-            <p>Capacity: 10 students</p>
-            <p>Quick Tip: Plenty of outlets available.</p>
-        </div>
-
-        <div class="poi-item" id="west-campus-study-space">
-            <h3>Group Study Space 4</h3>
-            <p>Location: West Campus, Room 301</p>
-            <p>Capacity: 6 students</p>
-            <p>Quick Tip: Great for project presentations!</p>
-        </div>
-        
         <!-- Add more POIs as needed -->
     </section>
 
@@ -83,10 +127,14 @@
 
     <script>
         function filterResults(category) {
-            const items = document.querySelectorAll('.poi-item');
+            const items = document.querySelectorAll('.poi-item, .building-section');
             items.forEach(item => {
                 // Check if the item should be shown based on the selected category
-                if (item.id === category || (category === 'group-study' && item.id.startsWith('group-study')) || (category === 'quiet-study' && item.id.startsWith('quiet-study')) || (category === 'bike-spaces' && item.id.startsWith('bike-spaces')) || (category === 'water-dispensers' && item.id.startsWith('water-dispensers'))) {
+                if (item.classList.contains('building-section') || item.id === category || 
+                    (category === 'group-study' && item.id.startsWith('group-study')) || 
+                    (category === 'quiet-study' && item.id.startsWith('quiet-study')) || 
+                    (category === 'bike-spaces' && item.id.startsWith('bike-spaces')) || 
+                    (category === 'water-dispensers' && item.id.startsWith('water-dispensers'))) {
                     item.style.display = 'block'; // Show the item
                 } else {
                     item.style.display = 'none'; // Hide the item

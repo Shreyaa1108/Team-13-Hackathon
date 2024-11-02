@@ -1,3 +1,53 @@
+// Simulated credentials
+const validUsername = "student";
+const validPassword = "password123";
+
+// Check login status on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    // Log current login status for debugging
+    console.log("Login status on page load:", isLoggedIn);
+
+    // Redirect logic
+    if (isLoggedIn === "true" && window.location.pathname.includes("login.html")) {
+        console.log("User is logged in; redirecting to index.html...");
+        window.location.href = "index.html"; // Redirect to home page if already logged in
+    } else if (isLoggedIn !== "true" && window.location.pathname.includes("index.html")) {
+        console.log("User not logged in; redirecting to login.html...");
+        window.location.href = "login.html"; // Redirect to login page if not logged in
+    }
+});
+
+// Handle login
+function handleLogin() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const loginError = document.getElementById("loginError");
+
+    // Log input values for debugging
+    console.log("Username entered:", username);
+    console.log("Password entered:", password);
+
+    // Check credentials
+    if (username === validUsername && password === validPassword) {
+        console.log("Login successful!");
+        localStorage.setItem("isLoggedIn", "true"); // Set login status in localStorage
+        window.location.href = "index.html"; // Redirect to home page upon successful login
+    } else {
+        console.log("Login failed: Invalid credentials.");
+        loginError.style.display = "block"; // Show error message
+    }
+}
+
+// Handle logout
+function logout() {
+    console.log("Logging out...");
+    localStorage.removeItem("isLoggedIn"); // Remove login status from localStorage
+    window.location.href = "login.html"; // Redirect to login page after logout
+}
+
+
 // Sample POI data array
 const poiData = [
     { name: "Bike Rack A", type: "Bike Parking", location: "Near Library" },
@@ -48,3 +98,4 @@ poiData.forEach(poi => {
         .addTo(map)
         .bindPopup(`<b>${poi.name}</b><br>${poi.type}<br>${poi.location}`);
 });
+
