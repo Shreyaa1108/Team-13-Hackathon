@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#filter-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#poi-list {
+    margin-top: 20px;
+    text-align: left;
+}
+  
+
+.poi-item {
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+}
+
+#map {
+    margin-top: 20px;
+    display: none; /* Hidden by default, toggled in app.js */
+}
