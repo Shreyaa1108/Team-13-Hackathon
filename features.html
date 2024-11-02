@@ -45,28 +45,6 @@
             <p>Location: Student Center</p>
             <p>Quick Tip: Stay hydrated!</p>
         </div>
-
-        <!-- New Group Study Spaces -->
-        <div class="poi-item" id="library-study-space">
-            <h3>Group Study Space 2</h3>
-            <p>Location: Library Building, Room 101</p>
-            <p>Capacity: 8 students</p>
-            <p>Quick Tip: Ideal for team discussions!</p>
-        </div>
-
-        <div class="poi-item" id="east-campus-study-space">
-            <h3>Group Study Space 3</h3>
-            <p>Location: East Campus, Room 201</p>
-            <p>Capacity: 10 students</p>
-            <p>Quick Tip: Plenty of outlets available.</p>
-        </div>
-
-        <div class="poi-item" id="west-campus-study-space">
-            <h3>Group Study Space 4</h3>
-            <p>Location: West Campus, Room 301</p>
-            <p>Capacity: 6 students</p>
-            <p>Quick Tip: Great for project presentations!</p>
-        </div>
         
         <!-- Add more POIs as needed -->
     </section>
@@ -83,15 +61,8 @@
 
     <script>
         function filterResults(category) {
-            const items = document.querySelectorAll('.poi-item');
-            items.forEach(item => {
-                // Check if the item should be shown based on the selected category
-                if (item.id === category || (category === 'group-study' && item.id.startsWith('group-study')) || (category === 'quiet-study' && item.id.startsWith('quiet-study')) || (category === 'bike-spaces' && item.id.startsWith('bike-spaces')) || (category === 'water-dispensers' && item.id.startsWith('water-dispensers'))) {
-                    item.style.display = 'block'; // Show the item
-                } else {
-                    item.style.display = 'none'; // Hide the item
-                }
-            });
+            // Implement filtering logic here
+            console.log("Filtering for: " + category);
         }
     </script>
 </body>

@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Inter', sans-serif; /* Use Inter for body text */
-    background-color: #FAF3F3; /* Soft pink background for contrast */
+    background-color: #FAF3F3; /* Light pink background for contrast */
     color: #2E2E2E; /* Dark grey text for readability */
     margin: 0;
     padding: 0;
@@ -20,8 +20,10 @@ body {
 /* Full-Width and Left-Aligned Header Content */
 .header-container {
     width: 100%;
+    max-width: 100%;
     padding: 0;
-    margin: 0 20px; /* Add slight side margins */
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Logo/Title left, Login button right */
@@ -34,9 +36,9 @@ body {
 }
 
 .header-logo {
-    width: 175px;
+    width: 175px; /* Adjust logo size */
     height: auto;
-    margin-right: 15px;
+    margin-right: 15px; /* Space between logo and text */
 }
 
 .header-title, .header-subtitle {
@@ -44,7 +46,7 @@ body {
 }
 
 .header-title {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Font size for main title */
     font-weight: 600;
     margin: 0;
     color: #ffffff;
@@ -55,81 +57,13 @@ body {
     font-weight: 400;
     margin: 0;
     opacity: 0.8;
-    color: #ffffff;
-}
-
-/* Hero Section Styling */
-.hero-section {
-    position: relative;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-}
-
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-text {
-    text-align: center;
-    max-width: 600px;
-    padding: 20px;
-}
-
-.hero-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin: 0 0 10px;
-}
-
-.hero-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.hero-button {
-    background-color: #e4042c;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-}
-
-.hero-button:hover {
-    background-color: #ae0020;
-    color: #ffffff;
+    color: #ffffff; /* White text for contrast */
 }
 
 /* Login Button Styling */
 .login-button {
     background-color: transparent;
-    color: #ffffff;
+    color: #ffffff; /* White text for contrast */
     border: 1px solid #ffffff;
     padding: 6px 15px;
     border-radius: 5px;
@@ -139,18 +73,36 @@ body {
 }
 
 .login-button:hover {
-    background-color: #ffffff;
-    color: #e4042c;
+    background-color: #ffffff; /* White background on hover */
+    color: #e4042c; /* Dark Red text on hover */
     border-color: #ffffff;
 }
 
 /* Section Headings */
 section h2 {
-    font-family: 'Poppins', sans-serif;
-    color: #e4042c; /* Match header's red for section headings */
+    font-family: 'Poppins', sans-serif; /* Use Poppins for section headings */
+    color: #e4042c; /* Match header red for section headings */
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Introduction Section Styling */
+.intro-section {
+    background-color: #FAF3F3; /* Light background for subtle contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border to separate from other sections */
+}
+
+.intro-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #2E2E2E; /* Dark grey for contrast with background */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
     text-align: center;
 }
 
@@ -164,18 +116,18 @@ section h2 {
 }
 
 #filter-buttons button {
-    background-color: transparent;
-    color: #e4042c;
+    background-color: transparent; /* Transparent for minimalism */
+    color: #e4042c; /* Dark Red text color */
     border: 1px solid #e4042c;
-    padding: 6px 12px;
+    padding: 6px 12px; /* Smaller padding for compact look */
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #filter-buttons button:hover {
-    background-color: #e4042c;
-    color: #ffffff;
+    background-color: #e4042c; /* Dark Red background on hover */
+    color: #ffffff; /* White text on hover for contrast */
     cursor: pointer;
 }
 
@@ -185,20 +137,20 @@ section h2 {
 }
 
 .poi-item {
-    border-left: 4px solid #e4042c;
+    border-left: 4px solid #e4042c; /* Red accent on each POI item */
     background-color: #ffffff;
     color: #2E2E2E;
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 /* Map Styling */
 #map {
     height: 400px;
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Subtle border around map */
     margin-top: 20px;
     border-radius: 5px;
 }
@@ -208,14 +160,14 @@ section h2 {
     background-color: #ffffff;
     color: #2E2E2E;
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     border-radius: 5px;
     margin: 15px 0;
 }
 
 .card-body {
     padding: 15px;
-    border-top: 4px solid #FFD700;
+    border-top: 4px solid #FFD700; /* Gold accent for testimonials */
 }
 
 .card-text {
@@ -226,37 +178,22 @@ section h2 {
 }
 
 .card small {
-    color: #666;
+    color: #666; /* Light grey for author text */
     display: block;
     margin-top: 10px;
 }
 
-/* QR Code Wrapper Styling */
-.qr-code-wrapper {
+/* QR Code Section Styles */
+.qr-code-section {
     text-align: center;
-    display: flex;
-    color: #2E2E2E;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 30px 0;
 }
 
-/* Styling for Access on Mobile Title */
-.qr-title {
-    color: #e4042c;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-/* QR Code Image Styling */
-.qr-code-img {
+.qr-code-section img {
     width: 150px;
-    border: 3px solid #e4042c;
+    border: 3px solid #e4042c; /* Red border around QR code */
     padding: 5px;
     border-radius: 10px;
-    display: block;
 }
 
 /* Responsive Adjustments */
@@ -279,6 +216,6 @@ section h2 {
     }
 
     .header-logo {
-        width: 40px;
+        width: 40px; /* Slightly smaller logo on mobile */
     }
 }
