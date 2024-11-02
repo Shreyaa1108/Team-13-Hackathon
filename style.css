@@ -126,6 +126,7 @@ body {
     color: #ffffff;
 }
 
+
 /* Login Button Styling */
 .login-button {
     background-color: transparent;
@@ -147,7 +148,7 @@ body {
 /* Section Headings */
 section h2 {
     font-family: 'Poppins', sans-serif;
-    color: #e4042c; /* Match header's red for section headings */
+    color: #2E2E2E; /* Match header's red for section headings */
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -159,25 +160,32 @@ section h2 {
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
 }
 
 #filter-buttons button {
-    background-color: transparent;
-    color: #e4042c;
-    border: 1px solid #e4042c;
-    padding: 6px 12px;
-    border-radius: 5px;
+    background-color: #e4042c; /* Red background for a more solid look */
+    color: #ffffff; /* White text for readability */
+    border: none; /* Remove border for a cleaner look */
+    padding: 8px 16px; /* Slightly larger padding for a more balanced button */
     font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 #filter-buttons button:hover {
-    background-color: #e4042c;
-    color: #ffffff;
-    cursor: pointer;
+    background-color: #b70324; /* Darker red on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
+
+#filter-buttons button:active {
+    background-color: #8b0019; /* Even darker red on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow reduction on click */
+}
+
 
 /* POI List and Map Styles */
 #poi-list {
@@ -203,33 +211,48 @@ section h2 {
     border-radius: 5px;
 }
 
+
+/* User Testimonials Section */
+.testimonials-section {
+    background-color: #FAF3F3;
+    padding: 3rem 0;
+}
+
+.testimonials-section h2 {
+    color: #2E2E2E;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
 /* Card Styles for Testimonials */
-.card {
+.testimonial-card {
     background-color: #ffffff;
     color: #2E2E2E;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin: 15px 0;
+    margin: 1rem 0;
 }
 
-.card-body {
-    padding: 15px;
-    border-top: 4px solid #FFD700;
+.testimonial-card .card-body {
+    padding: 1rem;
+    border-top: 4px solid #FFD700; /* Gold border at the top of each card */
 }
 
-.card-text {
-    font-size: 0.9rem;
+.testimonial-card .card-text {
+    font-size: 1rem;
     font-weight: 400;
-    margin: 0;
     color: #2E2E2E;
+    margin: 0;
 }
 
-.card small {
-    color: #666;
+.testimonial-card small {
+    color: #666666;
     display: block;
-    margin-top: 10px;
+    margin-top: 0.5rem;
 }
+
 
 /* QR Code Wrapper Styling */
 .qr-code-wrapper {
