@@ -1,33 +1,181 @@
+/* style.css for Red Color Scheme */
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
+    background-color: #FAF3F3; /* Light pink background for subtle contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
 }
 
+/* Header Styles */
+.header-minimal {
+    background-color: #8B0000; /* Dark Red for header */
+    color: #ffffff; /* White text for contrast */
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.header-title {
+    font-size: 1.5rem; /* Smaller, bold font for minimalistic header */
+    font-weight: 600;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.9rem; /* Smaller, lighter font for subtitle */
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.8; /* Lighter opacity for subtler look */
+}
+
+/* Quick Access Filter Button Styles */
 #filter-buttons {
-    margin-bottom: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
-button {
+#filter-buttons button {
+    background-color: #C62828; /* Crimson Red for buttons */
+    color: #ffffff;
+    border: none;
     padding: 10px 15px;
-    margin: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#filter-buttons button:hover {
+    background-color: #B22222; /* Slightly darker red on hover */
     cursor: pointer;
 }
 
+/* POI List and Map Styles */
 #poi-list {
     margin-top: 20px;
-    text-align: left;
 }
-  
 
 .poi-item {
-    padding: 8px;
-    border: 1px solid #ddd;
-    margin: 5px 0;
+    border-left: 4px solid #C62828; /* Red accent on each POI item */
+    background-color: #ffffff;
+    color: #2E2E2E;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 #map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ddd; /* Subtle border around map */
     margin-top: 20px;
-    display: none; /* Hidden by default, toggled in app.js */
+    border-radius: 5px;
+}
+
+/* Card Styles for Testimonials */
+.card {
+    background-color: #ffffff; /* White background */
+    color: #2E2E2E; /* Dark grey text */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.card-body {
+    padding: 15px;
+    border-top: 4px solid #FFD700; /* Gold accent on top of card */
+}
+
+.card-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.card small {
+    color: #666; /* Lighter text for author */
+    display: block;
+    margin-top: 10px;
+}
+
+/* Button Styles (Shared) */
+button, .btn {
+    background-color: #C62828;
+    border-color: #C62828;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #B22222; /* Darker red on hover */
+    border-color: #B22222;
+    cursor: pointer;
+}
+
+/* Section Headings */
+section h2 {
+    color: #8B0000; /* Dark Red for section headings */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* QR Code Section Styles */
+.qr-code-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.qr-code-section img {
+    width: 150px;
+    border: 3px solid #C62828; /* Red border around QR code for emphasis */
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* How It Works Section */
+.how-it-works .icon {
+    font-size: 2.5rem;
+    color: #C62828;
+}
+
+.how-it-works h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 15px 0 5px;
+}
+
+.how-it-works p {
+    font-size: 0.9rem;
+    color: #666666; /* Light grey for descriptive text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    #filter-buttons button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
 }

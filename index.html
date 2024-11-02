@@ -4,30 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Essentials Locator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="leaflet.css">
 </head>
 <body>
-    <h1>Campus Essentials Locator</h1>
 
-    <!-- Filter Buttons -->
-    <div id="filter-buttons">
-        <button onclick="filterPOI('all')">Show All</button>
-        <button onclick="filterPOI('Bike Parking')">Bike Parking</button>
-        <button onclick="filterPOI('Water Refill')">Water Refill</button>
-        <button onclick="filterPOI('Microwave')">Microwave Stations</button>
-        <button onclick="filterPOI('Quiet Study')">Quiet Study Spots</button>
-    </div>
+    <!-- Minimalistic Header -->
+    <header class="header-minimal py-2 px-4">
+        <h1 class="header-title mb-0">Campus Essentials Locator</h1>
+        <p class="header-subtitle mb-0">Discover campus amenities and resources</p>
+    </header>
 
-    <!-- List of POIs -->
-    <div id="poi-list">
-        <!-- Dynamically filled by JavaScript -->
-    </div>
+    <!-- Quick Access Filters -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Quick Access Filters</h2>
+        <div id="filter-buttons" class="d-flex justify-content-center gap-3 flex-wrap">
+            <button class="btn" onclick="filterPOI('all')">Show All</button>
+            <button class="btn" onclick="filterPOI('Bike Parking')">Bike Parking</button>
+            <button class="btn" onclick="filterPOI('Water Refill')">Water Refill Stations</button>
+            <button class="btn" onclick="filterPOI('Microwave')">Microwave Stations</button>
+            <button class="btn" onclick="filterPOI('Quiet Study')">Quiet Study Spots</button>
+        </div>
+    </section>
 
-    <!-- Map Container (Optional) -->
-    <div id="map" style="height: 400px; width: 100%;"></div>
+    <!-- POI List and Map -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4" style="color: #8B0000;">Points of Interest</h2>
+                <div id="poi-list" class="list-group">
+                    <!-- POIs dynamically added here -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center mb-4" style="color: #8B0000;">Campus Map</h2>
+                <div id="map" style="height: 400px; width: 100%;"></div>
+            </div>
+        </div>
+    </section>
 
-    <script src="leaflet.js"></script>
+    <!-- User Testimonials -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4" style="color: #8B0000;">What Students Are Saying</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"The quiet study areas have been a lifesaver during exam week!"</p>
+                            <small>- Emily Johnson</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"Super convenient for finding microwaves between classes."</p>
+                            <small>- Hiroshi Nakamura</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"I never knew there were so many water refill stations!"</p>
+                            <small>- Sophia Martin</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional Messages -->
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"Love the bike parking spots close to each building, very sigma!"</p>
+                            <small>- Yuki Tanaka</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"Great app for finding all the essentials on campus."</p>
+                            <small>- James Anderson</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"As a freshman, this has helped me find my favorite study spots."</p>
+                            <small>- Mei Chen</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"Perfect for discovering hidden campus gems!"</p>
+                            <small>- Mason Clark</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"Finding a quiet space is easy now. Thank you!"</p>
+                            <small>- Sakura Sato</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-top: 4px solid #FFD700;">
+                        <div class="card-body">
+                            <p class="card-text">"I love the feature for saving my favorite spots."</p>
+                            <small>- Arjun Patel</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- QR Code Section -->
+    <section class="container text-center my-5">
+        <h2 style="color: #8B0000;">Access on Mobile</h2>
+        <p>Scan the QR code to open the Campus Essentials Locator on your mobile device.</p>
+        <img src="qr.png" alt="QR Code" style="width: 150px;">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
