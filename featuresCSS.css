@@ -1,0 +1,224 @@
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter for body text */
+    background-color: #FAF3F3; /* Light pink background for contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Minimalistic Header Styling */
+.header-minimal {
+    background-color: #e4042c; /* Dark Red for header */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px 0; /* Top and bottom padding */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full-width header */
+}
+
+/* Full-Width and Left-Aligned Header Content */
+.header-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo/Title left, Login button right */
+}
+
+/* Logo and Title Section Styling */
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    width: 175px; /* Adjust logo size */
+    height: auto;
+    margin-right: 15px; /* Space between logo and text */
+}
+
+.header-title, .header-subtitle {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for header text */
+}
+
+.header-title {
+    font-size: 1.8rem; /* Font size for main title */
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+.header-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.8;
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Login Button Styling */
+.login-button {
+    background-color: transparent;
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #ffffff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e4042c; /* Dark Red text on hover */
+    border-color: #ffffff;
+}
+
+/* Section Headings */
+section h2 {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for section headings */
+    color: #e4042c; /* Match header red for section headings */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Introduction Section Styling */
+.intro-section {
+    background-color: #FAF3F3; /* Light background for subtle contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border to separate from other sections */
+}
+
+.intro-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #2E2E2E; /* Dark grey for contrast with background */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Quick Access Filter Button Styles */
+#filter-buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+#filter-buttons button {
+    background-color: transparent; /* Transparent for minimalism */
+    color: #e4042c; /* Dark Red text color */
+    border: 1px solid #e4042c;
+    padding: 6px 12px; /* Smaller padding for compact look */
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#filter-buttons button:hover {
+    background-color: #e4042c; /* Dark Red background on hover */
+    color: #ffffff; /* White text on hover for contrast */
+    cursor: pointer;
+}
+/* POI Item Styles */
+.poi-item {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.poi-item h4 {
+    color: #8B0000;
+    font-size: 1.2em;
+}
+
+.poi-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Map Styling */
+#map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ddd; /* Subtle border around map */
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Card Styles for Testimonials */
+.card {
+    background-color: #ffffff;
+    color: #2E2E2E;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.card-body {
+    padding: 15px;
+    border-top: 4px solid #FFD700; /* Gold accent for testimonials */
+}
+
+.card-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    color: #2E2E2E;
+}
+
+.card small {
+    color: #666; /* Light grey for author text */
+    display: block;
+    margin-top: 10px;
+}
+
+/* QR Code Section Styles */
+.qr-code-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.qr-code-section img {
+    width: 150px;
+    border: 3px solid #e4042c; /* Red border around QR code */
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.85rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    #filter-buttons button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .header-logo {
+        width: 40px; /* Slightly smaller logo on mobile */
+    }
+}
