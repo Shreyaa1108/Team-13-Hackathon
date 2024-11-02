@@ -144,23 +144,19 @@ body {
     border-color: #ffffff;
 }
 
-/* Quick Access Filters Section */
-.quick-access-filters {
-    background-color: #e4042c; /* Red background to match the rest of the design */
-    padding: 40px 0; /* Extra padding for comfortable spacing */
-}
-
-.quick-access-filters h2 {
-    color: #ffffff; /* White text for readability on red background */
+/* Section Headings */
+section h2 {
     font-family: 'Poppins', sans-serif;
+    color: #e4042c; /* Match header's red for section headings */
     font-size: 1.8rem;
     font-weight: 600;
-    text-align: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Quick Access Filter Button Styles */
 #filter-buttons {
+    margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -168,18 +164,18 @@ body {
 }
 
 #filter-buttons button {
-    background-color: #ffffff; /* White background to contrast against red */
-    color: #e4042c; /* Red text color to match theme */
-    border: 1px solid #e4042c; /* Red border */
-    padding: 8px 16px; /* Adjusted padding for a balanced look */
+    background-color: transparent;
+    color: #e4042c;
+    border: 1px solid #e4042c;
+    padding: 6px 12px;
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #filter-buttons button:hover {
-    background-color: #e4042c; /* Red background on hover */
-    color: #ffffff; /* White text on hover */
+    background-color: #e4042c;
+    color: #ffffff;
     cursor: pointer;
 }
 
