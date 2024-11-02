@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
-    background-color: #FAF3F3; /* Light pink background to soften the red */
+    background-color: #FAF3F3; /* Light pink background for subtle contrast */
     color: #2E2E2E; /* Dark grey text for readability */
     margin: 0;
     padding: 0;
@@ -11,13 +11,33 @@ body {
 .header-minimal {
     background-color: #e4042c; /* Dark Red for header */
     color: #ffffff; /* White text for contrast */
-    padding: 20px 30px;
+    padding: 20px 0; /* Top and bottom padding only */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full-width header */
+}
+
+/* Full-Width and Left-Aligned Header Content */
+.header-container {
+    width: 100%;
+    max-width: 100%; /* Remove max-width constraint */
+    padding: 0; /* Remove side padding */
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keeps logo/title left, login button right */
+}
+
+/* Logo and Title Section Styling */
+.logo-title-container {
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
-    width: 175px; /* Adjust size as needed */
+    width: 170px; /* Adjust size as needed */
     height: auto;
-    display: inline-block;
     margin-right: 15px; /* Space between logo and text */
 }
 
@@ -25,6 +45,7 @@ body {
     font-size: 1.8rem; /* Larger font for main title */
     font-weight: 600;
     margin: 0;
+    color: #ffffff;
 }
 
 .header-subtitle {
@@ -33,6 +54,24 @@ body {
     margin: 0;
     opacity: 0.8;
     color: #ffffff; /* White text for contrast */
+}
+
+/* Login Button Styling */
+.login-button {
+    background-color: transparent;
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #ffffff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e4042c; /* Red text on hover */
+    border-color: #ffffff;
 }
 
 /* Section Headings */
@@ -44,27 +83,46 @@ section h2 {
     text-align: center;
 }
 
+/* Introduction Section Styling */
+.intro-section {
+    background-color: #FAF3F3; /* Light background for subtle contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border to separate from the filters */
+}
+
+.intro-text {
+    font-size: 1rem; /* Standard font size */
+    font-weight: 400; /* Regular weight for readability */
+    color: #2E2E2E; /* Dark grey for contrast with background */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
 /* Quick Access Filter Button Styles */
 #filter-buttons {
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
 }
 
 #filter-buttons button {
-    background-color: #e4042c; /* Match header red */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 15px;
+    background-color: transparent; /* Transparent background for minimalism */
+    color: #e4042c; /* Red text color to match theme */
+    border: 1px solid #e4042c; /* Subtle red border */
+    padding: 6px 12px; /* Reduced padding for a smaller footprint */
     border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #filter-buttons button:hover {
-    background-color: #b70324; /* Darker red on hover */
+    background-color: #e4042c; /* Red background on hover */
+    color: #ffffff; /* White text on hover for contrast */
     cursor: pointer;
 }
 
@@ -83,6 +141,7 @@ section h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* Map Styling */
 #map {
     height: 400px;
     width: 100%;
