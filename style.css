@@ -1,33 +1,47 @@
-/* style.css for Red Color Scheme */
-
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
-    background-color: #FAF3F3; /* Light pink background for subtle contrast */
+    background-color: #FAF3F3; /* Light pink background to soften the red */
     color: #2E2E2E; /* Dark grey text for readability */
     margin: 0;
     padding: 0;
 }
 
-/* Header Styles */
+/* Minimalistic Header Styling */
 .header-minimal {
-    background-color: #8B0000; /* Dark Red for header */
+    background-color: #e4042c; /* Dark Red for header */
     color: #ffffff; /* White text for contrast */
-    text-align: left;
-    padding: 10px 20px;
+    padding: 20px 30px;
+}
+
+.header-logo {
+    width: 175px; /* Adjust size as needed */
+    height: auto;
+    display: inline-block;
+    margin-right: 15px; /* Space between logo and text */
 }
 
 .header-title {
-    font-size: 1.5rem; /* Smaller, bold font for minimalistic header */
+    font-size: 1.8rem; /* Larger font for main title */
     font-weight: 600;
     margin: 0;
 }
 
 .header-subtitle {
-    font-size: 0.9rem; /* Smaller, lighter font for subtitle */
+    font-size: 1rem;
     font-weight: 400;
     margin: 0;
-    opacity: 0.8; /* Lighter opacity for subtler look */
+    opacity: 0.8;
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Section Headings */
+section h2 {
+    color: #e4042c; /* Match the header's red for section headings */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Quick Access Filter Button Styles */
@@ -40,8 +54,8 @@ body {
 }
 
 #filter-buttons button {
-    background-color: #C62828; /* Crimson Red for buttons */
-    color: #ffffff;
+    background-color: #e4042c; /* Match header red */
+    color: #ffffff; /* White text */
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -50,7 +64,7 @@ body {
 }
 
 #filter-buttons button:hover {
-    background-color: #B22222; /* Slightly darker red on hover */
+    background-color: #b70324; /* Darker red on hover */
     cursor: pointer;
 }
 
@@ -60,9 +74,9 @@ body {
 }
 
 .poi-item {
-    border-left: 4px solid #C62828; /* Red accent on each POI item */
-    background-color: #ffffff;
-    color: #2E2E2E;
+    border-left: 4px solid #e4042c; /* Red accent on each POI item */
+    background-color: #ffffff; /* White background for contrast */
+    color: #2E2E2E; /* Dark grey text */
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
@@ -89,26 +103,27 @@ body {
 
 .card-body {
     padding: 15px;
-    border-top: 4px solid #FFD700; /* Gold accent on top of card */
+    border-top: 4px solid #FFD700; /* Gold accent to differentiate */
 }
 
 .card-text {
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0;
+    color: #2E2E2E; /* Dark grey text for readability */
 }
 
 .card small {
-    color: #666; /* Lighter text for author */
+    color: #666; /* Light grey for author text */
     display: block;
     margin-top: 10px;
 }
 
 /* Button Styles (Shared) */
 button, .btn {
-    background-color: #C62828;
-    border-color: #C62828;
-    color: #ffffff;
+    background-color: #e4042c;
+    border-color: #e4042c;
+    color: #ffffff; /* White text for contrast */
     border-radius: 5px;
     padding: 10px 20px;
     font-weight: 500;
@@ -116,18 +131,9 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-    background-color: #B22222; /* Darker red on hover */
-    border-color: #B22222;
+    background-color: #b70324; /* Darker red on hover */
+    border-color: #b70324;
     cursor: pointer;
-}
-
-/* Section Headings */
-section h2 {
-    color: #8B0000; /* Dark Red for section headings */
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 /* QR Code Section Styles */
@@ -138,7 +144,7 @@ section h2 {
 
 .qr-code-section img {
     width: 150px;
-    border: 3px solid #C62828; /* Red border around QR code for emphasis */
+    border: 3px solid #e4042c; /* Red border around QR code */
     padding: 5px;
     border-radius: 10px;
 }
@@ -146,12 +152,13 @@ section h2 {
 /* How It Works Section */
 .how-it-works .icon {
     font-size: 2.5rem;
-    color: #C62828;
+    color: #e4042c; /* Red icon color for consistency */
 }
 
 .how-it-works h5 {
     font-size: 1.1rem;
     font-weight: 600;
+    color: #e4042c; /* Match header color */
     margin: 15px 0 5px;
 }
 
@@ -163,11 +170,11 @@ section h2 {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .header-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .header-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     section h2 {
@@ -177,5 +184,9 @@ section h2 {
     #filter-buttons button {
         padding: 8px 12px;
         font-size: 0.9rem;
+    }
+
+    .header-logo {
+        width: 40px; /* Slightly smaller logo on mobile */
     }
 }
