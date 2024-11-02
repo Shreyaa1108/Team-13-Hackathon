@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
-    background-color: #FAF3F3; /* Light pink background to soften the red */
+    font-family: 'Inter', sans-serif; /* Use Inter for body text */
+    background-color: #FAF3F3; /* Light pink background for contrast */
     color: #2E2E2E; /* Dark grey text for readability */
     margin: 0;
     padding: 0;
@@ -11,20 +11,45 @@ body {
 .header-minimal {
     background-color: #e4042c; /* Dark Red for header */
     color: #ffffff; /* White text for contrast */
-    padding: 20px 30px;
+    padding: 20px 0; /* Top and bottom padding */
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full-width header */
+}
+
+/* Full-Width and Left-Aligned Header Content */
+.header-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo/Title left, Login button right */
+}
+
+/* Logo and Title Section Styling */
+.logo-title-container {
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
-    width: 175px; /* Adjust size as needed */
+    width: 175px; /* Adjust logo size */
     height: auto;
-    display: inline-block;
     margin-right: 15px; /* Space between logo and text */
 }
 
+.header-title, .header-subtitle {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for header text */
+}
+
 .header-title {
-    font-size: 1.8rem; /* Larger font for main title */
+    font-size: 1.8rem; /* Font size for main title */
     font-weight: 600;
     margin: 0;
+    color: #ffffff;
 }
 
 .header-subtitle {
@@ -35,12 +60,49 @@ body {
     color: #ffffff; /* White text for contrast */
 }
 
+/* Login Button Styling */
+.login-button {
+    background-color: transparent;
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #ffffff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e4042c; /* Dark Red text on hover */
+    border-color: #ffffff;
+}
+
 /* Section Headings */
 section h2 {
-    color: #e4042c; /* Match the header's red for section headings */
+    font-family: 'Poppins', sans-serif; /* Use Poppins for section headings */
+    color: #e4042c; /* Match header red for section headings */
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Introduction Section Styling */
+.intro-section {
+    background-color: #FAF3F3; /* Light background for subtle contrast */
+    color: #2E2E2E; /* Dark grey text for readability */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border to separate from other sections */
+}
+
+.intro-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #2E2E2E; /* Dark grey for contrast with background */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
     text-align: center;
 }
 
@@ -49,22 +111,23 @@ section h2 {
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
 }
 
 #filter-buttons button {
-    background-color: #e4042c; /* Match header red */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 15px;
+    background-color: transparent; /* Transparent for minimalism */
+    color: #e4042c; /* Dark Red text color */
+    border: 1px solid #e4042c;
+    padding: 6px 12px; /* Smaller padding for compact look */
     border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #filter-buttons button:hover {
-    background-color: #b70324; /* Darker red on hover */
+    background-color: #e4042c; /* Dark Red background on hover */
+    color: #ffffff; /* White text on hover for contrast */
     cursor: pointer;
 }
 
@@ -75,14 +138,15 @@ section h2 {
 
 .poi-item {
     border-left: 4px solid #e4042c; /* Red accent on each POI item */
-    background-color: #ffffff; /* White background for contrast */
-    color: #2E2E2E; /* Dark grey text */
+    background-color: #ffffff;
+    color: #2E2E2E;
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* Map Styling */
 #map {
     height: 400px;
     width: 100%;
@@ -93,8 +157,8 @@ section h2 {
 
 /* Card Styles for Testimonials */
 .card {
-    background-color: #ffffff; /* White background */
-    color: #2E2E2E; /* Dark grey text */
+    background-color: #ffffff;
+    color: #2E2E2E;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     border-radius: 5px;
@@ -103,37 +167,20 @@ section h2 {
 
 .card-body {
     padding: 15px;
-    border-top: 4px solid #FFD700; /* Gold accent to differentiate */
+    border-top: 4px solid #FFD700; /* Gold accent for testimonials */
 }
 
 .card-text {
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0;
-    color: #2E2E2E; /* Dark grey text for readability */
+    color: #2E2E2E;
 }
 
 .card small {
     color: #666; /* Light grey for author text */
     display: block;
     margin-top: 10px;
-}
-
-/* Button Styles (Shared) */
-button, .btn {
-    background-color: #e4042c;
-    border-color: #e4042c;
-    color: #ffffff; /* White text for contrast */
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-button:hover, .btn:hover {
-    background-color: #b70324; /* Darker red on hover */
-    border-color: #b70324;
-    cursor: pointer;
 }
 
 /* QR Code Section Styles */
@@ -147,24 +194,6 @@ button:hover, .btn:hover {
     border: 3px solid #e4042c; /* Red border around QR code */
     padding: 5px;
     border-radius: 10px;
-}
-
-/* How It Works Section */
-.how-it-works .icon {
-    font-size: 2.5rem;
-    color: #e4042c; /* Red icon color for consistency */
-}
-
-.how-it-works h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #e4042c; /* Match header color */
-    margin: 15px 0 5px;
-}
-
-.how-it-works p {
-    font-size: 0.9rem;
-    color: #666666; /* Light grey for descriptive text */
 }
 
 /* Responsive Adjustments */
