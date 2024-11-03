@@ -7,6 +7,13 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <style>
+            #map{
+                height: 400px;
+                width: 100%;
+            }
+        </style>
     </head>
 <body>
 
@@ -32,14 +39,14 @@
 
     <!-- Hero Section with Background Image -->
     <section class="hero-section">
-        <div class="hero-overlay">
+        <div class="hero-overlay">x
             <div class="hero-text">
                 <h1 class="hero-title">WELCOME TO CAMPUS ESSENTIALS!</h1>
                 <p class="hero-description">
                     Discover all the essential amenities on campus. Whether you’re looking for quiet study spots, bike parking, or water refill stations, we've got you covered.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#filter-buttons" class="btn hero-button">Explore Amenities</a>
+                    <a href="features.html" class="btn hero-button">Explore Amenities</a>
                     <a href="#poi-list" class="btn hero-button">View Map</a>
                 </div>
             </div>
@@ -157,7 +164,7 @@
         </div>
         <div class="col-md-6">
             <h2 class="map-title text-center mb-4">Campus Map</h2>
-            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div id="map"></div>
         </div>
     </div>
 </section>
@@ -171,6 +178,45 @@
         <img src="qr.png" alt="QR Code" class="qr-code-img">
     </section>
 
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  // Initialize the map centered on Leicester, UK
+  var map = L.map('map').setView([52.62118486509846, -1.1247505198345402], 15);
+
+  // Add the OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Define campus locations and details
+  var locations = [
+    { coords: [52.61905422565071, -1.1291752891507674], popup: "Bike Spaces - Sir Bob Burgess" },
+    { coords: [52.621882788686975, -1.1252197584667025], popup: "Bike Spaces - Percy Gee" },
+    { coords: [52.62056082641992, -1.124894660315189], popup: "Bike Spaces - David Wilson Library" },
+    { coords: [52.621886439649465, -1.1240413410793741], popup: "Bike Spaces - Charles Wilson" },
+    { coords: [52.61905422565071, -1.1291752891507674], popup: "Water Dispenser - Sir Bob Burgess" },
+    { coords: [52.621882788686975, -1.1252197584667025], popup: "Water Dispenser - Percy Gee" },
+    { coords: [52.62056082641992, -1.124894660315189], popup: "Water Dispenser - David Wilson Library" },
+    { coords: [52.621886439649465, -1.1240413410793741], popup: "Water Dispenser - Charles Wilson" },
+    { coords: [52.61905422565071, -1.1291752891507674], popup: "Microwave Station - Sir Bob Burgess" },
+    { coords: [52.621882788686975, -1.1252197584667025], popup: "Microwave Station - Percy Gee" },
+    { coords: [52.62056082641992, -1.124894660315189], popup: "Microwave Station - David Wilson Library" },
+    { coords: [52.621886439649465, -1.1240413410793741], popup: "Microwave Station - Charles Wilson" },
+    { coords: [52.61905422565071, -1.1291752891507674], popup: "Study Spot - Sir Bob Burgess" },
+    { coords: [52.621882788686975, -1.1252197584667025], popup: "Study Spot - Percy Gee" },
+    { coords: [52.62056082641992, -1.124894660315189], popup: "Study Spot - David Wilson Library" },
+    { coords: [52.621886439649465, -1.1240413410793741], popup: "Study Spot - Charles Wilson" }
+  ];
+
+  // Add markers to the map
+  locations.forEach(function(location) {
+    L.marker(location.coords).addTo(map)
+            .bindPopup(location.popup);
+  });
+</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>

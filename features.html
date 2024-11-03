@@ -8,6 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="features.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
     <!-- Responsive Header with Logo, Title, and Login Button -->
@@ -15,8 +17,8 @@
         <div class="header-container">
             <!-- Logo and Login Button (Visible only on mobile) -->
             <div class="logo-title-container">
-                <img src="uol_logo.png" alt="University of Leicester" class="header-logo">
-                <a href="#login" class="login-button mobile-login">Log In</a> <!-- Visible on mobile only -->
+                <a href="index.html" ><img src="uol_logo.png" alt="University of Leicester" class="header-logo"></a>
+                <a href="login.html" class="login-button mobile-login">Log In</a> <!-- Visible on mobile only -->
             </div>
             
             <!-- Title (Centered) -->
@@ -50,7 +52,8 @@
                 <p><strong>Quick Tip:</strong> Quieter in early mornings and late afternoons.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+
+                <img src=SBB.jpeg width="500">
             </div>
 
             <div class="poi-item microwave-stations">
@@ -61,7 +64,7 @@
                 <p><strong>Quick Tip:</strong> Avoid lunchtime by visiting early or late.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-2"></div>
+                <img src=SBB.jpeg width="500">
             </div>
 
             <div class="poi-item bike-spaces">
@@ -72,7 +75,7 @@
                 <p><strong>Quick Tip:</strong> Use a sturdy lock, especially during peak hours.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-3"></div>
+                <img src=SBB.jpeg width="500">
             </div>
 
             <div class="poi-item water-dispensers">
@@ -83,7 +86,7 @@
                 <p><strong>Quick Tip:</strong> Mornings are best to avoid queues.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-4"></div>
+                <img src=SBB.jpeg width="500">
             </div>
         </div>
 
@@ -99,7 +102,7 @@
                 <p><strong>Quick Tip:</strong> Popular around lunchtime; quieter in the morning.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-5"></div>
+                <img src=PG.jpeg width="500">
             </div>
 
             <div class="poi-item microwave-stations">
@@ -110,7 +113,7 @@
                 <p><strong>Quick Tip:</strong> Peak usage around noon; better availability before 11 am.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-6"></div>
+                <img src=PG.jpeg width="500">
             </div>
 
             <div class="poi-item bike-spaces">
@@ -121,7 +124,7 @@
                 <p><strong>Quick Tip:</strong> Early arrival ensures best spots.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-7"></div>
+                <img src=PG.jpeg width="500">
             </div>
 
             <div class="poi-item water-dispensers">
@@ -132,7 +135,7 @@
                 <p><strong>Quick Tip:</strong> Always stocked; busiest during lunch.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-8"></div>
+                <img src=PG.jpeg width="500">
             </div>
         </div>
 
@@ -148,7 +151,7 @@
                 <p><strong>Quick Tip:</strong> Good for group discussions; quieter in the late afternoons.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=DW.jpeg width="500">
             </div>
 
             <div class="poi-item microwave-stations">
@@ -159,7 +162,7 @@
                 <p><strong>Quick Tip:</strong> Ideal for quick meals, especially outside lunch hours.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=DW.jpeg width="500">
             </div>
 
             <div class="poi-item bike-spaces">
@@ -170,7 +173,7 @@
                 <p><strong>Quick Tip:</strong> Bring a repair kit; tools available in the repair station.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=DW.jpeg width="500">
             </div>
 
             <div class="poi-item water-dispensers">
@@ -181,7 +184,7 @@
                 <p><strong>Quick Tip:</strong> Refill stations are busiest between classes.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=DW.jpeg width="500">
             </div>
         </div>
 
@@ -197,7 +200,7 @@
                 <p><strong>Quick Tip:</strong> Less crowded on Wednesdays.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=CW.jpeg width="500">
             </div>
 
             <div class="poi-item microwave-stations">
@@ -208,7 +211,7 @@
                 <p><strong>Quick Tip:</strong> Perfect spot for lunch, but busy around noon.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=CW.jpeg width="500">
             </div>
 
             <div class="poi-item bike-spaces">
@@ -219,7 +222,7 @@
                 <p><strong>Quick Tip:</strong> Best accessed via the library path.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=CW.jpeg width="500">
             </div>
 
             <div class="poi-item water-dispensers">
@@ -230,7 +233,7 @@
                 <p><strong>Quick Tip:</strong> Accessible even during off-peak hours.</p>
                 <h4>Map:</h4>
                 <p>This area displays the location of study spaces and other facilities on campus.</p>
-                <div class="map-placeholder" id="map-1"></div>
+                <img src=CW.jpeg width="500">
             </div>
         </div>
     </section>
@@ -247,6 +250,140 @@
             });
         }
     </script>
+    <h1>Leave a Review</h1>
+    <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required><br><br>
+        <label for="place">Choose a Place: <br></label>
+        <select id="place" required>
+            <option value="" disabled selected>Select a place</option>
+            <option value="Sir Bob Burgess" data-lat="52.619032812823875" data-lng="-1.1288540244389669">Sir Bob Burgess</option>
+            <option value="Percy Gee" data-lat="52.6217590380922" data-lng="-1.1252626738086524">Percy Gee</option>
+            <option value="David Wilson Library" data-lat="52.620560754450274" data-lng="-1.124926861406811">David Wilson Library</option>
+            <option value="Charles Wilson" data-lat="52.61905422565071" data-lng="-1.1291752891507674">Charles Wilson</option>
+            <option value="Art Gallery" data-lat="22.2835" data-lng="114.1560">Art Gallery</option>
+        </select><br><br>
+        <label>Rating:</label><br>
+        <div id="stars" class="star-rating">
+            <span data-value="1">☆</span>
+            <span data-value="2">☆</span>
+            <span data-value="3">☆</span>
+            <span data-value="4">☆</span>
+            <span data-value="5">☆</span>
+        </div><br>
+        <textarea id="comment" placeholder="Your Comment" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>All Places & Reviews</h2>
+    <div id="placesContainer"></div>
+    
+    <script>
+        const reviewForm = document.getElementById('reviewForm');
+        const placesContainer = document.getElementById('placesContainer');
+        const stars = document.querySelectorAll('#stars span');
+        let rating = 0;
+        const reviewsByPlace = {};
+    
+        // Star rating handling
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                rating = star.getAttribute('data-value');
+                updateStarDisplay(rating);
+            });
+            star.addEventListener('mouseover', () => {
+                const hoverValue = star.getAttribute('data-value');
+                updateStarDisplay(hoverValue);
+            });
+            star.addEventListener('mouseout', () => {
+                updateStarDisplay(rating);
+            });
+        });
+    
+        function updateStarDisplay(value) {
+            stars.forEach(star => {
+                star.textContent = star.getAttribute('data-value') <= value ? '★' : '☆';
+            });
+        }
+    
+        // Form submission handling
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const placeSelect = document.getElementById('place');
+            const place = placeSelect.value;
+            const lat = parseFloat(placeSelect.options[placeSelect.selectedIndex].dataset.lat);
+            const lng = parseFloat(placeSelect.options[placeSelect.selectedIndex].dataset.lng);
+            const comment = document.getElementById('comment').value;
+    
+            if (rating === 0) {
+                alert("Please select a star rating!");
+                return;
+            }
+    
+            const reviewHTML = `
+                <strong>${name}</strong> - <span class="star-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span><br>
+                <small>${new Date().toLocaleDateString()}</small><br>${comment}
+            `;
+    
+            if (!reviewsByPlace[place]) {
+                createPlaceSection(place, lat, lng);
+                reviewsByPlace[place] = [];
+            }
+            reviewsByPlace[place].push(reviewHTML);
+    
+            updateReviewList(place);
+            reviewForm.reset();
+            updateStarDisplay(0);
+            rating = 0;
+        });
+    
+        // Function to create a new section with a map for each place
+        function createPlaceSection(place, lat, lng) {
+            const section = document.createElement('div');
+            section.className = 'review-section';
+    
+            // Create title and map container for the new place
+            section.innerHTML = <h3>${place}</h3><div id="map-${place}" class="map-container"></div><ul id="review-list-${place}" class="review-list"></ul>;
+            placesContainer.appendChild(section);
+    
+            // Initialize the map
+            const map = L.map(map-${place}).setView([lat, lng], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+    
+            // Add a marker for the place
+            const marker = L.marker([lat, lng]).addTo(map);
+            marker.bindPopup(<strong>${place}</strong>).openPopup();
+        }
+    
+        // Function to update the review list for a specific place
+        function updateReviewList(place) {
+            const reviewList = document.getElementById(review-list-${place});
+            reviewList.innerHTML = '';
+            reviewsByPlace[place].forEach(reviewHTML => {
+                const reviewItem = document.createElement('li');
+                reviewItem.className = 'review-item';
+                reviewItem.innerHTML = reviewHTML;
+                reviewList.appendChild(reviewItem);
+            });
+        }
+    </script>
+    
+        <script>
+            function filterResults(category) {
+                const items = document.querySelectorAll('.poi-item');
+                items.forEach(item => {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        </script>
 
 
 </body>
