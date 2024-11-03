@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple Maps for Different Locations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .star-rating {
+            color: blue;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .review-section {
+            margin-bottom: 20px;
+        }
+        .map-container {
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        .review-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .review-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Leave a Review</h1>
+<form id="reviewForm">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <label for="place">Choose a Place: <br></label>
+    <select id="place" required>
+        <option value="" disabled selected>Select a place</option>
+        <option value="Sir Bob Burgess" data-lat="52.619032812823875" data-lng="-1.1288540244389669">Sir Bob Burgess</option>
+        <option value="Percy Gee" data-lat="52.6217590380922" data-lng="-1.1252626738086524">Percy Gee</option>
+        <option value="David Wilson Library" data-lat="52.620560754450274" data-lng="-1.124926861406811">David Wilson Library</option>
+        <option value="Charles Wilson" data-lat="52.61905422565071" data-lng="-1.1291752891507674">Charles Wilson</option>
+        <option value="Art Gallery" data-lat="22.2835" data-lng="114.1560">Art Gallery</option>
+    </select><br><br>
+    <label>Rating:</label><br>
+    <div id="stars" class="star-rating">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+    </div><br>
+    <textarea id="comment" placeholder="Your Comment" required></textarea><br>
+    <button type="submit">Submit</button>
+</form>
+
+<h2>All Places & Reviews</h2>
+<div id="placesContainer"></div>
+
+<script>
+    const reviewForm = document.getElementById('reviewForm');
+    const placesContainer = document.getElementById('placesContainer');
+    const stars = document.querySelectorAll('#stars span');
+    let rating = 0;
+    const reviewsByPlace = {};
+
+    // Star rating handling
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            rating = star.getAttribute('data-value');
+            updateStarDisplay(rating);
+        });
+        star.addEventListener('mouseover', () => {
+            const hoverValue = star.getAttribute('data-value');
+            updateStarDisplay(hoverValue);
+        });
+        star.addEventListener('mouseout', () => {
+            updateStarDisplay(rating);
+        });
+    });
+
+    function updateStarDisplay(value) {
+        stars.forEach(star => {
+            star.textContent = star.getAttribute('data-value') <= value ? '★' : '☆';
+        });
+    }
+
+    // Form submission handling
+    reviewForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const placeSelect = document.getElementById('place');
+        const place = placeSelect.value;
+        const lat = parseFloat(placeSelect.options[placeSelect.selectedIndex].dataset.lat);
+        const lng = parseFloat(placeSelect.options[placeSelect.selectedIndex].dataset.lng);
+        const comment = document.getElementById('comment').value;
+
+        if (rating === 0) {
+            alert("Please select a star rating!");
+            return;
+        }
+
+        const reviewHTML = `
+            <strong>${name}</strong> - <span class="star-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span><br>
+            <small>${new Date().toLocaleDateString()}</small><br>${comment}
+        `;
+
+        if (!reviewsByPlace[place]) {
+            createPlaceSection(place, lat, lng);
+            reviewsByPlace[place] = [];
+        }
+        reviewsByPlace[place].push(reviewHTML);
+
+        updateReviewList(place);
+        reviewForm.reset();
+        updateStarDisplay(0);
+        rating = 0;
+    });
+
+    // Function to create a new section with a map for each place
+    function createPlaceSection(place, lat, lng) {
+        const section = document.createElement('div');
+        section.className = 'review-section';
+
+        // Create title and map container for the new place
+        section.innerHTML = `<h3>${place}</h3><div id="map-${place}" class="map-container"></div><ul id="review-list-${place}" class="review-list"></ul>`;
+        placesContainer.appendChild(section);
+
+        // Initialize the map
+        const map = L.map(`map-${place}`).setView([lat, lng], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Add a marker for the place
+        const marker = L.marker([lat, lng]).addTo(map);
+        marker.bindPopup(`<strong>${place}</strong>`).openPopup();
+    }
+
+    // Function to update the review list for a specific place
+    function updateReviewList(place) {
+        const reviewList = document.getElementById(`review-list-${place}`);
+        reviewList.innerHTML = '';
+        reviewsByPlace[place].forEach(reviewHTML => {
+            const reviewItem = document.createElement('li');
+            reviewItem.className = 'review-item';
+            reviewItem.innerHTML = reviewHTML;
+            reviewList.appendChild(reviewItem);
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -6,7 +6,9 @@
         <title>Campus Essentials Locator</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+        
     </head>
 <body>
 
@@ -155,9 +157,10 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-md-6">
             <h2 class="map-title text-center mb-4">Campus Map</h2>
-            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div id="map"></div>
         </div>
     </div>
 </section>
@@ -175,6 +178,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="app.js"></script>
+<script>
+        // Create a Leaflet map in the #map element
+        var map = L.map('map').setView([52.62118486509846, -1.1247505198345402], 15); // Leicester coordinates
 
+        // Add the OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define campus locations
+        var locations = [
+            { coords: [52.61905422565071, -1.1291752891507674], popup: "Sir Bob Burgess" },
+            { coords: [52.621882788686975, -1.1252197584667025], popup: "Percy Gee" },
+            { coords: [52.62056082641992, -1.124894660315189], popup: "David Wilson Library" },
+            { coords: [52.621886439649465, -1.1240413410793741], popup: "Charles Wilson" }
+        ];
+
+        // Add markers for each location
+        locations.forEach(function(location) {
+            L.marker(location.coords).addTo(map)
+                .bindPopup(location.popup);
+        });
+</script>
 </body>
+
 </html>
