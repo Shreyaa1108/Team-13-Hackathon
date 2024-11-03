@@ -1,64 +1,75 @@
 /* Global Styles */
 body {
-    font-family: 'Inter', sans-serif; /* Use Inter for body text */
-    background-color: #FAF3F3; /* Soft pink background for contrast */
-    color: #2E2E2E; /* Dark grey text for readability */
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF3F3;
+    color: #2E2E2E;
     margin: 0;
     padding: 0;
 }
 
-/* Minimalistic Header Styling */
+/* Header Styling */
 .header-minimal {
-    background-color: #e4042c; /* Dark Red for header */
-    color: #ffffff; /* White text for contrast */
-    padding: 20px 0; /* Top and bottom padding */
-    display: flex;
-    align-items: center;
-    width: 100%; /* Full-width header */
-}
-
-/* Full-Width and Left-Aligned Header Content */
-.header-container {
+    background-color: #e4042c;
+    color: #ffffff;
+    padding: 20px 0;
     width: 100%;
-    padding: 0;
-    margin: 0 20px; /* Add slight side margins */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Logo/Title left, Login button right */
 }
 
-/* Logo and Title Section Styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
 .logo-title-container {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .header-logo {
-    width: 175px;
-    height: auto;
-    margin-right: 15px;
-}
-
-.header-title, .header-subtitle {
-    font-family: 'Poppins', sans-serif; /* Use Poppins for header text */
+    height: 40px;
 }
 
 .header-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
-    margin: 0;
     color: #ffffff;
+    flex: 1;
+    padding-right: 70px;
+    margin: 0;
+    text-align: center;
 }
 
-.header-subtitle {
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0;
-    opacity: 0.8;
+/* Button Styling */
+.login-button {
+    background-color: transparent;
     color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-/* Hero Section Styling */
+.login-button:hover {
+    background-color: #ffffff;
+    color: #e4042c;
+}
+
+/* Responsive Visibility */
+.mobile-login {
+    display: none;
+}
+
+.desktop-login {
+    display: inline-block;
+}
+
+/* Hero Section */
 .hero-section {
     position: relative;
     background-image: url('background.jpg');
@@ -93,13 +104,12 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
 }
 
 .hero-description {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -114,48 +124,27 @@ body {
     background-color: #e4042c;
     color: #ffffff;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: 0.3s;
     text-decoration: none;
 }
 
 .hero-button:hover {
     background-color: #ae0020;
-    color: #ffffff;
-}
-
-
-/* Login Button Styling */
-.login-button {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    padding: 6px 15px;
-    border-radius: 5px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #ffffff;
-    color: #e4042c;
-    border-color: #ffffff;
 }
 
 /* Section Headings */
 section h2 {
     font-family: 'Poppins', sans-serif;
-    color: #2E2E2E; /* Match header's red for section headings */
+    color: #2E2E2E;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Quick Access Filter Button Styles */
+/* Filter Button Styling */
 #filter-buttons {
     margin: 20px 0;
     display: flex;
@@ -165,32 +154,36 @@ section h2 {
 }
 
 #filter-buttons button {
-    background-color: #e4042c; /* Red background for a more solid look */
-    color: #ffffff; /* White text for readability */
-    border: none; /* Remove border for a cleaner look */
-    padding: 8px 16px; /* Slightly larger padding for a more balanced button */
+    background-color: #e4042c;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #filter-buttons button:hover {
-    background-color: #b70324; /* Darker red on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    background-color: #b70324;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 #filter-buttons button:active {
-    background-color: #8b0019; /* Even darker red on click */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow reduction on click */
+    background-color: #8b0019;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-/* POI List and Map Styles */
+/* POI List and Map */
 #poi-list {
     margin-top: 20px;
+    max-height: 400px; /* Set the maximum height for the list */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding-right: 15px; /* Optional: add padding to prevent scrollbar overlap with content */
 }
+
+
 
 .poi-item {
     border-left: 4px solid #e4042c;
@@ -202,17 +195,14 @@ section h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Map Styling */
 #map {
     height: 400px;
     width: 100%;
     border: 1px solid #ddd;
     margin-top: 20px;
-    border-radius: 5px;
 }
 
-
-/* User Testimonials Section */
+/* Testimonials Section */
 .testimonials-section {
     background-color: #FAF3F3;
     padding: 3rem 0;
@@ -226,25 +216,22 @@ section h2 {
     font-weight: 600;
 }
 
-/* Card Styles for Testimonials */
 .testimonial-card {
     background-color: #ffffff;
     color: #2E2E2E;
-    border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 1rem 0;
 }
 
 .testimonial-card .card-body {
     padding: 1rem;
-    border-top: 4px solid #FFD700; /* Gold border at the top of each card */
+    border-top: 4px solid #FFD700;
 }
 
 .testimonial-card .card-text {
     font-size: 1rem;
     font-weight: 400;
     color: #2E2E2E;
-    margin: 0;
 }
 
 .testimonial-card small {
@@ -253,8 +240,7 @@ section h2 {
     margin-top: 0.5rem;
 }
 
-
-/* QR Code Wrapper Styling */
+/* QR Code Styling */
 .qr-code-wrapper {
     text-align: center;
     display: flex;
@@ -265,43 +251,42 @@ section h2 {
     margin: 30px 0;
 }
 
-/* Styling for Access on Mobile Title */
 .qr-title {
-    color: #e4042c;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-/* QR Code Image Styling */
 .qr-code-img {
     width: 150px;
-    border: 3px solid #e4042c;
+    border: 3px solid #000000;
     padding: 5px;
     border-radius: 10px;
+}
+
+/* Titles */
+.desktop-title {
     display: block;
 }
 
-/* Responsive Adjustments */
+.mobile-title {
+    display: none;
+}
+
+/* Mobile-specific Styling */
 @media (max-width: 768px) {
-    .header-title {
+    .desktop-title {
+        display: none;
+    }
+    .mobile-title {
+        display: block;
         font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 10px;
     }
-
-    .header-subtitle {
-        font-size: 0.85rem;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    #filter-buttons button {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    .header-logo {
-        width: 40px;
+    .mb-4 {
+        margin-top: 14px;
     }
 }
