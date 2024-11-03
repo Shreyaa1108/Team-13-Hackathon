@@ -1,60 +1,26 @@
-// Simulated credentials
-const validUsername = "student";
-const validPassword = "password123";
-
-// Check login status on page load
-document.addEventListener("DOMContentLoaded", () => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    // Log current login status for debugging
-    console.log("Login status on page load:", isLoggedIn);
-
-    // Redirect logic
-    if (isLoggedIn === "true" && window.location.pathname.includes("login.html")) {
-        console.log("User is logged in; redirecting to index.html...");
-        window.location.href = "index.html"; // Redirect to home page if already logged in
-    } else if (isLoggedIn !== "true" && window.location.pathname.includes("index.html")) {
-        console.log("User not logged in; redirecting to login.html...");
-        window.location.href = "login.html"; // Redirect to login page if not logged in
-    }
-});
-
-// Handle login
-function handleLogin() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const loginError = document.getElementById("loginError");
-
-    // Log input values for debugging
-    console.log("Username entered:", username);
-    console.log("Password entered:", password);
-
-    // Check credentials
-    if (username === validUsername && password === validPassword) {
-        console.log("Login successful!");
-        localStorage.setItem("isLoggedIn", "true"); // Set login status in localStorage
-        window.location.href = "index.html"; // Redirect to home page upon successful login
-    } else {
-        console.log("Login failed: Invalid credentials.");
-        loginError.style.display = "block"; // Show error message
-    }
-}
-
-// Handle logout
-function logout() {
-    console.log("Logging out...");
-    localStorage.removeItem("isLoggedIn"); // Remove login status from localStorage
-    window.location.href = "login.html"; // Redirect to login page after logout
-}
-
-
 // Sample POI data array
 const poiData = [
-    { name: "Bike Rack A", type: "Bike Parking", location: "Near Library" },
-    { name: "Water Dispenser B", type: "Water Refill", location: "Main Hall" },
-    { name: "Microwave Station 1", type: "Microwave", location: "Student Center" },
-    { name: "Quiet Study Zone", type: "Quiet Study", location: "Second Floor, Library" },
-    // Add more POIs here
+    { name: "Water Dispenser", type: "Water Dispensers", location: "Main Hall" },
+    { name: "Microwave Station", type: "Microwave", location: "Student Center" },
+    { name: "Study Space", type: "Study", location: "Sir Bobs Burgess" },
+    { name: "Study Space", type: "Study", location: "Percy Gee" },
+    { name: "Study Zone", type: "Study", location: "David Wilson" },
+    { name: "Study Zone", type: "Study", location: "Charles Wilson" },
+    { name: "Bike Space", type: "Bike Spaces", location: "Sir Bobs Burguess" },
+    { name: "Bike Space", type: "Bike Spaces", location: "Percy Gee" },
+    { name: "Bike Space", type: "Bike Spaces", location: "David Wilson" },
+    { name: "Bike Space", type: "Bike Spaces", location: "Charles Wilson" },
+    { name: "Microwave Station", type: "Microwave", location: "Sir Bobs Burgess" },
+    { name: "Microwave Station", type: "Microwave", location: "Percy Gee" },
+    { name: "Microwave Station", type: "Microwave", location: "David Wilson" },
+    { name: "Microwave Station", type: "Microwave", location: "Charles Wilson" },
+    { name: "Water Dispenser", type: "Water Dispensers", location: "Sir Bobs Burgess" },
+    { name: "Water Dispenser", type: "Water Dispensers", location: "Charles Wilson" },
+    { name: "Water Dispenser", type: "Water Dispensers", location: "Percy Gee" },
+    { name: "Water Dispenser", type: "Water Dispensers", location: "David Wilson" },
+
+
+    // Add more POIs here with appropriate 'type' values
 ];
 
 // Function to display POIs based on filter
@@ -64,8 +30,9 @@ function displayPOIs(filteredPOIs) {
 
     filteredPOIs.forEach(poi => {
         const poiItem = document.createElement("div");
-        poiItem.className = "poi-item";
-        poiItem.innerHTML = `<strong>${poi.name}</strong> - ${poi.type}<br><small>${poi.location}</small>`;
+        poiItem.className = "poi-item list-group-item";
+        // Display only name and location, without type
+        poiItem.innerHTML = `<strong>${poi.name}</strong><br><small>Location: ${poi.location}</small>`;
         poiList.appendChild(poiItem);
     });
 }
@@ -86,16 +53,19 @@ window.onload = () => displayPOIs(poiData);
 // Optional: Map setup
 document.getElementById("map").style.display = "block"; // Display map
 
-// Initialize map with Leaflet.js if map is required
-const map = L.map('map').setView([latitude, longitude], 15); // Adjust with campus coordinates
+// Initialize map with Leaflet.js
+const map = L.map('map').setView([latitude, longitude], 15); // Adjust with actual campus coordinates
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Add POI markers to the map (Optional)
+// Add POI markers to the map
 poiData.forEach(poi => {
-    L.marker([latitude, longitude]) // Replace with actual POI coordinates
+    // Use sample coordinates; replace with actual POI coordinates for each item
+    const latitude = 52.6369; // Example latitude (adjust as necessary)
+    const longitude = -1.1398; // Example longitude (adjust as necessary)
+    
+    L.marker([latitude, longitude])
         .addTo(map)
         .bindPopup(`<b>${poi.name}</b><br>${poi.type}<br>${poi.location}`);
 });
-

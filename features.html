@@ -1,146 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Essentials Locator</title>
-    <link rel="stylesheet" href="featuresCSS.css"> <!-- Link to your CSS file -->
-    <style>
-        /* Additional CSS styles for layout */
-        .building-section {
-            margin-bottom: 20px;
-        }
-        .poi-list {
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 20px; /* Space between items */
-        }
-        .poi-item {
-            flex: 1 1 calc(50% - 20px); /* 2 items per row with space */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 10px;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="features.css"> <!-- Link to your CSS file -->
 </head>
-<body>
+
+    <!-- Responsive Header with Logo, Title, and Login Button -->
     <header class="header-minimal">
-        <h1 class="header-title">Campus Essentials Locator</h1>
-        <p class="header-subtitle">Find Your Perfect Study Spot!</p>
+        <div class="header-container">
+            <!-- Logo and Login Button (Visible only on mobile) -->
+            <div class="logo-title-container">
+                <img src="uol_logo.png" alt="University of Leicester" class="header-logo">
+                <a href="#login" class="login-button mobile-login">Log In</a> <!-- Visible on mobile only -->
+            </div>
+            
+            <!-- Title (Centered) -->
+            <h1 class="header-title desktop-title">Campus Essentials Locator</h1>
+            <!-- Login Button (Visible only on desktop) -->
+            <a href="#login" class="login-button desktop-login">Log In</a> <!-- Visible on desktop only -->
+        </div>
     </header>
 
     <section id="filter-buttons">
-        <button onclick="filterResults('group-study')">Group Study Spaces</button>
-        <button onclick="filterResults('quiet-study')">Quiet Study Spaces</button>
+        <button onclick="filterResults('group-study')">Study Spaces</button>
+        <button onclick="filterResults('microwave-stations')">Microwave Stations</button>
         <button onclick="filterResults('bike-spaces')">Bike Spaces</button>
         <button onclick="filterResults('water-dispensers')">Water Dispensers</button>
     </section>
 
-    <section id="poi-list">
-        <h2>Available Spaces</h2>
+    <section id="poi-list" class="building-container">
+        <div class="heading-container">
+            <h2>Buildings</h2>
+        </div>
 
-        <!-- Sir Bob Burgess -->
-        <div class="building-section">
+        <!-- Building Section: Sir Bob Burgess -->
+        <div class="building">
             <h3>Sir Bob Burgess</h3>
-            <div class="poi-list">
-                <div class="poi-item" id="group-study-space-1">
-                    <h4>Group Study Space 1</h4>
-                    <p>Location: 1st Floor, Next to the Stairs</p>
-                    <p>Quick Tip: Convenient spot for quick meetings!</p>
-                </div>
-                <div class="poi-item" id="group-study-space-2">
-                    <h4>Group Study Space 2</h4>
-                    <p>Location: 1st Floor, Outside the Lecture Theatre</p>
-                    <p>Quick Tip: Great for group discussions before classes!</p>
-                </div>
+
+            <div class="poi-item group-study">
+                <h4>Study Space</h4>
+                <p><strong>Location:</strong> 1st Floor</p>
+                <p><strong>Directions:</strong> Take the stairs to the 1st floor, find the space on the left.</p>
+                <p><strong>Features:</strong> Charging points, heater nearby, tables with a view.</p>
+                <p><strong>Quick Tip:</strong> Quieter in early mornings and late afternoons.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item microwave-stations">
+                <h4>Microwave Station</h4>
+                <p><strong>Location:</strong> Ground Floor, Near Student Lounge</p>
+                <p><strong>Directions:</strong> Walk past reception; microwaves are on the left.</p>
+                <p><strong>Features:</strong> Two microwaves, cleaning supplies, nearby seating.</p>
+                <p><strong>Quick Tip:</strong> Avoid lunchtime by visiting early or late.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-2"></div>
+            </div>
+
+            <div class="poi-item bike-spaces">
+                <h4>Bike Spaces</h4>
+                <p><strong>Location:</strong> Outside Main Entrance</p>
+                <p><strong>Directions:</strong> Right outside the main entrance.</p>
+                <p><strong>Features:</strong> 20 bike racks, security cameras, lighting at night.</p>
+                <p><strong>Quick Tip:</strong> Use a sturdy lock, especially during peak hours.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-3"></div>
+            </div>
+
+            <div class="poi-item water-dispensers">
+                <h4>Water Dispenser</h4>
+                <p><strong>Location:</strong> 2nd Floor, Near Elevators</p>
+                <p><strong>Directions:</strong> Head to the 2nd floor; near the elevators on the west side.</p>
+                <p><strong>Features:</strong> Cold and room temperature options, cups, nearby waste bin.</p>
+                <p><strong>Quick Tip:</strong> Mornings are best to avoid queues.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-4"></div>
             </div>
         </div>
 
-        <!-- Percy Gee -->
-        <div class="building-section">
+        <!-- Building Section: Percy Gee -->
+        <div class="building">
             <h3>Percy Gee</h3>
-            <div class="poi-list">
-                <div class="poi-item" id="group-study-space-3">
-                    <h4>Group Study Space 3</h4>
-                    <p>Location: Ground Floor, Near the Cafeteria</p>
-                    <p>Quick Tip: Good for a relaxed atmosphere!</p>
-                </div>
+
+            <div class="poi-item group-study">
+                <h4>Study Space</h4>
+                <p><strong>Location:</strong> Ground Floor, Near Cafeteria</p>
+                <p><strong>Directions:</strong> Next to the cafeteria on the ground floor.</p>
+                <p><strong>Features:</strong> Charging points, natural light, nearby food options.</p>
+                <p><strong>Quick Tip:</strong> Popular around lunchtime; quieter in the morning.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-5"></div>
+            </div>
+
+            <div class="poi-item microwave-stations">
+                <h4>Microwave Station</h4>
+                <p><strong>Location:</strong> 1st Floor, Near Student Hub</p>
+                <p><strong>Directions:</strong> Walk towards the Student Hub; microwaves are next to the seating area.</p>
+                <p><strong>Features:</strong> Three microwaves, seating nearby, cleaning supplies.</p>
+                <p><strong>Quick Tip:</strong> Peak usage around noon; better availability before 11 am.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-6"></div>
+            </div>
+
+            <div class="poi-item bike-spaces">
+                <h4>Bike Spaces</h4>
+                <p><strong>Location:</strong> South Entrance</p>
+                <p><strong>Directions:</strong> Near the south entrance of the building.</p>
+                <p><strong>Features:</strong> 15 bike racks, CCTV surveillance, well-lit area.</p>
+                <p><strong>Quick Tip:</strong> Early arrival ensures best spots.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-7"></div>
+            </div>
+
+            <div class="poi-item water-dispensers">
+                <h4>Water Dispenser</h4>
+                <p><strong>Location:</strong> 2nd Floor, Near Study Rooms</p>
+                <p><strong>Directions:</strong> Close to the study rooms on the 2nd floor.</p>
+                <p><strong>Features:</strong> Filtered water, bottle filling option, nearby waste bin.</p>
+                <p><strong>Quick Tip:</strong> Always stocked; busiest during lunch.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-8"></div>
             </div>
         </div>
 
-        <!-- David Wilson -->
-        <div class="building-section">
+        <!-- Building Section: David Wilson -->
+        <div class="building">
             <h3>David Wilson</h3>
-            <div class="poi-list">
-                <div class="poi-item" id="group-study-space-4">
-                    <h4>Group Study Space 4</h4>
-                    <p>Location: 2nd Floor, Room 205</p>
-                    <p>Quick Tip: Quiet area ideal for studying!</p>
-                </div>
+
+            <div class="poi-item group-study">
+                <h4>Study Space</h4>
+                <p><strong>Location:</strong> 2nd Floor, Room 205</p>
+                <p><strong>Directions:</strong> Take the stairs or elevator to 2nd floor, Room 205.</p>
+                <p><strong>Features:</strong> Whiteboards, charging ports, comfortable seating.</p>
+                <p><strong>Quick Tip:</strong> Good for group discussions; quieter in the late afternoons.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item microwave-stations">
+                <h4>Microwave Station</h4>
+                <p><strong>Location:</strong> Ground Floor, Near Reception</p>
+                <p><strong>Directions:</strong> Located by the seating area near the reception.</p>
+                <p><strong>Features:</strong> Single microwave, ample seating, cleaning supplies.</p>
+                <p><strong>Quick Tip:</strong> Ideal for quick meals, especially outside lunch hours.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item bike-spaces">
+                <h4>Bike Spaces</h4>
+                <p><strong>Location:</strong> West Side Entrance</p>
+                <p><strong>Directions:</strong> Accessible via the west side of the building.</p>
+                <p><strong>Features:</strong> 10 bike racks, security lighting, bike repair station nearby.</p>
+                <p><strong>Quick Tip:</strong> Bring a repair kit; tools available in the repair station.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item water-dispensers">
+                <h4>Water Dispenser</h4>
+                <p><strong>Location:</strong> 3rd Floor, Next to Study Area</p>
+                <p><strong>Directions:</strong> Located next to the main study area on the 3rd floor.</p>
+                <p><strong>Features:</strong> Cold water, bottle filling, eco-friendly cups available.</p>
+                <p><strong>Quick Tip:</strong> Refill stations are busiest between classes.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
             </div>
         </div>
 
-        <!-- Charles Wilson -->
-        <div class="building-section">
+        <!-- Building Section: Charles Wilson -->
+        <div class="building">
             <h3>Charles Wilson</h3>
-            <div class="poi-list">
-                <div class="poi-item" id="group-study-space-5">
-                    <h4>Group Study Space 5</h4>
-                    <p>Location: 1st Floor, Next to the Computer Lab</p>
-                    <p>Quick Tip: Great for tech-based group projects!</p>
-                </div>
+
+            <div class="poi-item group-study">
+                <h4>Study Space</h4>
+                <p><strong>Location:</strong> 1st Floor, Next to Computer Lab</p>
+                <p><strong>Directions:</strong> Just outside the computer lab on the 1st floor.</p>
+                <p><strong>Features:</strong> Charging stations, large desks, quiet zone.</p>
+                <p><strong>Quick Tip:</strong> Less crowded on Wednesdays.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item microwave-stations">
+                <h4>Microwave Station</h4>
+                <p><strong>Location:</strong> 2nd Floor, Near Cafeteria</p>
+                <p><strong>Directions:</strong> Near the cafeteria seating on the 2nd floor.</p>
+                <p><strong>Features:</strong> Two microwaves, plenty of seating, sanitizing wipes.</p>
+                <p><strong>Quick Tip:</strong> Perfect spot for lunch, but busy around noon.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item bike-spaces">
+                <h4>Bike Spaces</h4>
+                <p><strong>Location:</strong> North Side Entrance</p>
+                <p><strong>Directions:</strong> Near the north entrance, close to the library.</p>
+                <p><strong>Features:</strong> 12 bike racks, sheltered area, security cameras.</p>
+                <p><strong>Quick Tip:</strong> Best accessed via the library path.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
+            </div>
+
+            <div class="poi-item water-dispensers">
+                <h4>Water Dispenser</h4>
+                <p><strong>Location:</strong> Basement Level, Near Restrooms</p>
+                <p><strong>Directions:</strong> Located near the restrooms on the basement level.</p>
+                <p><strong>Features:</strong> Cold water, bottle filler, cups available.</p>
+                <p><strong>Quick Tip:</strong> Accessible even during off-peak hours.</p>
+                <h4>Map:</h4>
+                <p>This area displays the location of study spaces and other facilities on campus.</p>
+                <div class="map-placeholder" id="map-1"></div>
             </div>
         </div>
-
-        <!-- Other POIs -->
-        <div class="poi-item" id="quiet-study">
-            <h3>Quiet Study Area 1</h3>
-            <p>Location: East Campus</p>
-            <p>Quick Tip: Perfect for uninterrupted study time.</p>
-        </div>
-
-        <div class="poi-item" id="bike-spaces">
-            <h3>Bike Space 1</h3>
-            <p>Location: Near Main Entrance</p>
-            <p>Quick Tip: Ensure to lock your bike!</p>
-        </div>
-
-        <div class="poi-item" id="water-dispensers">
-            <h3>Water Dispenser 1</h3>
-            <p>Location: Student Center</p>
-            <p>Quick Tip: Stay hydrated!</p>
-        </div>
-
-        <!-- Add more POIs as needed -->
     </section>
-
-    <section id="map">
-        <h2>Campus Map</h2>
-        <p>Map will be displayed here.</p>
-        <!-- You can embed a map here using Google Maps API or similar -->
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Campus Essentials Locator. All rights reserved.</p>
-    </footer>
 
     <script>
         function filterResults(category) {
-            const items = document.querySelectorAll('.poi-item, .building-section');
+            const items = document.querySelectorAll('.poi-item');
             items.forEach(item => {
-                // Check if the item should be shown based on the selected category
-                if (item.classList.contains('building-section') || item.id === category || 
-                    (category === 'group-study' && item.id.startsWith('group-study')) || 
-                    (category === 'quiet-study' && item.id.startsWith('quiet-study')) || 
-                    (category === 'bike-spaces' && item.id.startsWith('bike-spaces')) || 
-                    (category === 'water-dispensers' && item.id.startsWith('water-dispensers'))) {
-                    item.style.display = 'block'; // Show the item
+                if (item.classList.contains(category)) {
+                    item.style.display = 'block';
                 } else {
-                    item.style.display = 'none'; // Hide the item
+                    item.style.display = 'none';
                 }
             });
         }
     </script>
+
+
 </body>
+
 </html>
